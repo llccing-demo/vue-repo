@@ -1,28 +1,21 @@
-function defineReactive(data, key, val) {
-  let dep = []
-  Object.defineProperty(data, key, {
-    enumerable: true,
-    configurable: true,
-    get: function () {
-      dep.push(window.target)
-      console.log('getter', val)
-      return val
-    },
-    set: function(newVal) {
-      if (val === newVal) {
-        return
-      }
-      console.log('setter', newVal)
-      val = newVal
-    },
-  })
-}
+import Observer from './Object/Observer'
+import Watcher from './Object/Watcher'
 
-let obj = { a: 123, b: `I'm new user`};
+let obj = { a: 'asdfadf', b: `I'm new user` }
 
-Object.keys(obj).forEach(key => {
-  defineReactive(obj, key, obj[key])
+// 给属性设置get set
+new Observer(obj)
+
+
+// 监听变化
+new Watcher(obj, 'a', function(newVal, old) {
+  console.log('watcher callback newVal', newVal)
+  console.log('watcher callback old', old)
 })
 
-obj.a = 1255
-console.log(obj.b)
+// 复制新值时，会触发 callback
+obj.a = 123123;
+
+
+// 未监听的，没有 callback
+obj.b = 123;
