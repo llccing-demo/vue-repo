@@ -7,8 +7,8 @@
           <template slot="title">
             <i class="el-icon-message"></i>d3.js
           </template>
-          <el-menu-item index="d3-demo">first</el-menu-item>
-          <el-menu-item>选项2</el-menu-item>
+          <el-menu-item index="/server/list">资源列表</el-menu-item>
+          <el-menu-item index="/d3-demo/demo">d3.js</el-menu-item>
         </el-submenu>
 
         <el-submenu index="2">
@@ -18,25 +18,16 @@
           <el-menu-item index="2-1">选项1</el-menu-item>
           <el-menu-item index="2-2">选项2</el-menu-item>
         </el-submenu>
-
-        <el-submenu index="3">
-          <template slot="title">
-            <i class="el-icon-setting"></i>导航三
-          </template>
-          <el-menu-item index="3-1">选项1</el-menu-item>
-          <el-menu-item index="3-2">选项2</el-menu-item>
-        </el-submenu>
       </el-menu>
     </el-aside>
 
     <el-container>
       <el-header style="text-align: right; font-size: 12px">
         <el-dropdown>
-          <i class="el-icon-setting" style="margin-right: 15px"></i>
+          <i class="el-icon-setting" style="margin-right: 15px; cursor: pointer;"></i>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>查看</el-dropdown-item>
-            <el-dropdown-item>新增</el-dropdown-item>
-            <el-dropdown-item>删除</el-dropdown-item>
+            <el-dropdown-item>个人信息</el-dropdown-item>
+            <el-dropdown-item>登出</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
         <span>王小虎</span>
@@ -49,7 +40,11 @@
   </el-container>
 </template>
 
-<style>
+<style scoped>
+>>> .el-container {
+  height: 100vh;
+}
+
 .el-header {
   background-color: #b3c0d1;
   color: #333;

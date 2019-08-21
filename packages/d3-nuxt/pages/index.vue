@@ -1,7 +1,7 @@
 
 <template>
   <div class="container">
-    <el-button type="success" @click="redirect">to circle</el-button>
+    <el-button type="success" @click="redirect">login</el-button>
   </div>
 </template>
 
@@ -19,7 +19,7 @@
 export default {
   methods:{
     redirect(){
-      this.$router.push('/d3-demo')
+      this.$router.push('/server/show')
     }
   }
 };
