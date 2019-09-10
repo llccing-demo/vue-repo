@@ -9,6 +9,11 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "element-ui": "^2.12.0",
+    "global": "^4.4.0",
+    "iview": "^3.5.0",
+    "sass": "^1.23.0-module.beta.1",
+    "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
